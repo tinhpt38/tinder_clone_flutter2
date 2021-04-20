@@ -82,16 +82,19 @@ class _MainCardState extends State<MainCard> {
             ),
             height: 50,
             width: 50,
-          child: IconButton(
-            icon: Icon(Icons.adb),
-            color: Colors.white,
-            onPressed: (){},
+          child: InkWell(
+            onTap: (){},
+            child: Image.asset('assets/images/Swipe_Rollback.png'),
           )
         ),
         ),
-        Padding(
-          padding: EdgeInsets
-        )
+        Positioned(
+            left: MediaQuery.of(context).size.height/3.2,
+            top : MediaQuery.of(context).size.height/1.72,
+            child: InkWell(
+          onTap: (){},
+          child: Image.asset('assets/images/buttons-superlike_active.png'),
+        ))
       ]
     );
   }
