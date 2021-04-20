@@ -51,7 +51,7 @@ class _RootPageState extends State<RootPage> {
               label: 'Home',
               activeIcon: ImageIcon(
                 AssetImage('assets/images/home_active.png'),
-                color: AppColors.orgain,
+                color: AppColors.activeColor,
               )),
           BottomNavigationBarItem(
               backgroundColor: AppColors.black,
@@ -61,7 +61,7 @@ class _RootPageState extends State<RootPage> {
                 AssetImage(
                   'assets/images/message_active.png',
                 ),
-                color: AppColors.orgain,
+                color: AppColors.activeColor,
               )),
           BottomNavigationBarItem(
               // backgroundColor: AppColors.black,
@@ -70,7 +70,7 @@ class _RootPageState extends State<RootPage> {
               label: 'Notifications',
               activeIcon: ImageIcon(
                 AssetImage('assets/images/notifications_active.png'),
-                color: AppColors.orgain,
+                color: AppColors.activeColor,
               )),
           BottomNavigationBarItem(
               backgroundColor: AppColors.black,
@@ -78,7 +78,7 @@ class _RootPageState extends State<RootPage> {
               label: 'Profiles',
               activeIcon: ImageIcon(
                 AssetImage('assets/images/profile_active.png'),
-                color: AppColors.orgain,
+                color: AppColors.activeColor,
               )),
         ],
         currentIndex: _index,
