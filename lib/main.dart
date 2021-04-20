@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tinder_clone_flutter2/modules/root_page.dart';
+import 'package:tinder_clone_flutter2/pages/root_page.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
 
 void main() {
