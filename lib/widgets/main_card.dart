@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tinder_clone_flutter2/pages/profiles_page.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
 import 'package:tinder_clone_flutter2/values/textstyle.dart';
 
@@ -31,42 +32,48 @@ class _MainCardState extends State<MainCard> {
             ),
             Expanded(
               flex:2,
-                child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Container(
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Expanded(child: Text('Tomato',style: TxtStyle.nameStyle,)),
-                              Expanded(child: Text('20',style: TxtStyle.nameStyle)),
-                            ],
+                child: InkWell(
+                  onTap: (){
+                    //chuyen qua trang info
+                    Navigator.push(context,MaterialPageRoute(builder: (context) =>ProfilesPage()));
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Container(
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: Row(
+                              children: [
+                                Expanded(child: Text('Tomato',style: TxtStyle.nameStyle,)),
+                                Expanded(child: Text('20',style: TxtStyle.nameStyle)),
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: BorderRadius.circular(30)
-                                ) ,
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
-                                  child: Text('Versatile',
-                                  style: TxtStyle.smallHighlightText,),
+                          Expanded(
+                            child: Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.circular(30)
+                                  ) ,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
+                                    child: Text('Versatile',
+                                    style: TxtStyle.smallHighlightText,),
+                                  ),
                                 ),
-                              ),
-                              SizedBox(width :15),
-                              Container(
-                                child: Text('Seattle, USA',
-                                style: TxtStyle.smallBlackText,),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                                SizedBox(width :15),
+                                Container(
+                                  child: Text('Seattle, USA',
+                                  style: TxtStyle.smallBlackText,),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ))
