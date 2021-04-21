@@ -29,6 +29,9 @@ class _MainCardState extends State<MainCard> {
                 height: 50,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                        image: AssetImage("assets/images/me.jpeg"),
+                        fit: BoxFit.fill),
                     color: AppColors.green),
               ),
             ),
@@ -109,8 +112,10 @@ class _MainCardState extends State<MainCard> {
             )),
       ),
       Positioned(
-          left: MediaQuery.of(context).size.height / 3.2,
-          top: MediaQuery.of(context).size.height / 1.72,
+          // left: MediaQuery.of(context).size.height / 3.2,
+          // top: MediaQuery.of(context).size.height / 1.72,
+          right: 24,
+          bottom: 64,
           child: InkWell(
             onTap: () {},
             child: Image.asset('assets/images/buttons-superlike_active.png'),

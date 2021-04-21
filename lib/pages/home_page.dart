@@ -65,7 +65,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   //   super.didChangeDependencies();
   // }
 
-  List<String> users = ["Tomato", "Oliver", "Thea", "John", "Jack", "Cino"];
+  List<String> users = [
+    "Tomato",
+    "Oliver",
+    "Thea",
+    "John",
+    "Jack",
+    "Cino",
+    "Tomato",
+    "Oliver",
+    "Thea",
+    "John",
+    "Jack",
+    "Cino"
+  ];
 
   @override
   void dispose() {
