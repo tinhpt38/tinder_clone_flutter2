@@ -58,9 +58,7 @@ class _RootPageState extends State<RootPage> {
               icon: ImageIcon(AssetImage('assets/images/message_deactive.png')),
               label: 'Messages',
               activeIcon: ImageIcon(
-                AssetImage(
-                  'assets/images/message_active.png',
-                ),
+                AssetImage('assets/images/message_active.png'),
                 color: AppColors.activeColor,
               )),
           BottomNavigationBarItem(
