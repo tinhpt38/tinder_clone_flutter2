@@ -21,7 +21,7 @@ class _FriendCardState extends State<FriendCard> {
             color: AppColors.red
           ),
         ),
-      ),
+      ),q
     );
   }
 }

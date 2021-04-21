@@ -62,7 +62,7 @@ class _RootPageState extends State<RootPage> {
                 color: AppColors.activeColor,
               )),
           BottomNavigationBarItem(
-              // backgroundColor: AppColors.black,
+              backgroundColor: AppColors.black,
               icon: ImageIcon(
                   AssetImage('assets/images/notifications_deactive.png')),
               label: 'Notifications',

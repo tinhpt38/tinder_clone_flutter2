@@ -10,14 +10,12 @@ class TxtStyle {
       fontSize: 16,
       color: AppColors.white,
       fontWeight: FontWeight.w200,
-      decoration:TextDecoration.none
-  );
+      decoration: TextDecoration.none);
   static TextStyle bigHighlightText = TextStyle(
       fontSize: 16,
       color: AppColors.white,
       fontWeight: FontWeight.w400,
-      decoration: TextDecoration.none
-  );
+      decoration: TextDecoration.none);
   static TextStyle smallBlackText = TextStyle(
     fontSize: 16,
   );
@@ -25,5 +23,22 @@ class TxtStyle {
     fontSize: 30,
     color: AppColors.white,
     decoration: TextDecoration.none,
+  );
+  static TextStyle smallWhiteText = TextStyle(
+      fontSize: 22,
+      color: AppColors.white,
+      fontWeight: FontWeight.w300,
+      decoration: TextDecoration.none
+  );
+  static TextStyle bigBlackText = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.w300,
+    decoration: TextDecoration.none
+  );
+  static TextStyle bigWhiteText = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
+      color: AppColors.white,
+      decoration: TextDecoration.none
   );
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tinder_clone_flutter2/pages/profiles_page.dart';
+import 'package:tinder_clone_flutter2/pages/user_profile.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
 import 'package:tinder_clone_flutter2/values/textstyle.dart';
 import 'package:tinder_clone_flutter2/widgets/match_noti_card.dart';
@@ -44,7 +44,7 @@ class _MainCardState extends State<MainCard> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ProfilesPage()));
+                            builder: (context) => UserProfilePage()));
                   },
                   child: Padding(
                     padding: EdgeInsets.all(20),
@@ -120,7 +120,8 @@ class _MainCardState extends State<MainCard> {
           child: InkWell(
             onTap: () {},
             child: Image.asset('assets/images/buttons-superlike_active.png'),
-          ))
+          )),
+      // MatchCard(),
     ]);
   }
 }
