@@ -108,14 +108,6 @@ class _MainCardState extends State<MainCard> {
             height: 50,
             width: 50,
             child: InkWell(
-<<<<<<< HEAD
-          onTap: (){},
-          child: Image.asset('assets/images/buttons-superlike_active.png'),
-        )),
-        MatchCard(),
-      ]
-    );
-=======
               onTap: () {},
               child: Image.asset('assets/images/Swipe_Rollback.png'),
             )),
@@ -124,12 +116,11 @@ class _MainCardState extends State<MainCard> {
           // left: MediaQuery.of(context).size.height / 3.2,
           // top: MediaQuery.of(context).size.height / 1.72,
           right: 24,
-          bottom: 64,
+          bottom: 90,
           child: InkWell(
             onTap: () {},
             child: Image.asset('assets/images/buttons-superlike_active.png'),
           ))
     ]);
->>>>>>> master
   }
 }

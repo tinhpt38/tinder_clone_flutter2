@@ -21,7 +21,7 @@ class _ProfilesPageState extends State<ProfilesPage> {
                 Container(
                   color: AppColors.green,
                   // height: MediaQuery.of(context).size.height / 1.3,
-                  height: 700,
+                  height: 600,
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 20, left: 15),
@@ -75,10 +75,10 @@ class _ProfilesPageState extends State<ProfilesPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        InfoLine('Height','176 cm'),
+                        InfoLine('Height', '176 cm'),
                         InfoLine('Weight', '65 kg'),
-                        InfoLine('Relationship Status','Single'),
-                        InfoLine('Ethnicity','Asian')
+                        InfoLine('Relationship Status', 'Single'),
+                        InfoLine('Ethnicity', 'Asian')
                       ],
                     ),
                   ),
@@ -154,11 +154,10 @@ class _ProfilesPageState extends State<ProfilesPage> {
   }
 }
 
-
-Widget InfoLine (String txt1,String txt2) {
+Widget InfoLine(String txt1, String txt2) {
   return Row(children: [
     Text(
-      txt1 +': ',
+      txt1 + ': ',
       style: TxtStyle.bigHighlightText,
     ),
     Text(
@@ -167,4 +166,3 @@ Widget InfoLine (String txt1,String txt2) {
     )
   ]);
 }
-
