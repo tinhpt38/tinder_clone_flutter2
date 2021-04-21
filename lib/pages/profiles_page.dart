@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
+import 'package:tinder_clone_flutter2/values/textstyle.dart';
+import 'package:tinder_clone_flutter2/widgets/friend_card.dart';
 
 class ProfilesPage extends StatefulWidget {
   @override
@@ -21,8 +23,76 @@ class _ProfilesPageState extends State<ProfilesPage> {
                   // height: MediaQuery.of(context).size.height / 1.3,
                   height: 700,
                 ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20, left: 15),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      // color: AppColors.red,
+                      child: Text('About', style: TxtStyle.tittleWhiteText)),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  child: Text(
+                    'My name is Mary Burgess and I enjoy meeting new people and finding ways to help them have an uplifting experience. I enjoy reading, and the knowledge ... and perspective that my reading gives me has strengthened my teaching skills and presentation abilities.opportunities, through which I was able to have fewer returned products and increased repeat customers, when compared with co-workers.',
+                    style: TxtStyle.smallHighlightText,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10, left: 15),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      // color: AppColors.red,
+                      child: Text('Friends', style: TxtStyle.tittleWhiteText)),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    child: Row(
+                      children: [
+                        FriendCard(),
+                        FriendCard(),
+                        FriendCard(),
+                        FriendCard(),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10, left: 15),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      // color: AppColors.red,
+                      child: Text('Basic Profile',
+                          style: TxtStyle.tittleWhiteText)),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  child: Container(
+                    // color: AppColors.red,
+
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InfoLine('Height','176 cm'),
+                        InfoLine('Weight', '65 kg'),
+                        InfoLine('Relationship Status','Single'),
+                        InfoLine('Ethnicity','Asian')
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10, left: 15),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      // color: AppColors.red,
+                      child:
+                          Text('Interesting', style: TxtStyle.tittleWhiteText)),
+                ),
                 Container(
-                  height: 1000,
+                  height: 500,
                 )
               ]),
               Padding(
@@ -38,15 +108,19 @@ class _ProfilesPageState extends State<ProfilesPage> {
                   ),
                 ),
               ),
-              
             ],
           ),
         ),
       ),
       Expanded(
+          // nav bar
           flex: 2,
           child: Container(
             height: 100,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              backgroundBlendMode: BlendMode.lighten,
+            ),
             // color: AppColors.red,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -79,3 +153,18 @@ class _ProfilesPageState extends State<ProfilesPage> {
     ]);
   }
 }
+
+
+Widget InfoLine (String txt1,String txt2) {
+  return Row(children: [
+    Text(
+      txt1 +': ',
+      style: TxtStyle.bigHighlightText,
+    ),
+    Text(
+      txt2,
+      style: TxtStyle.smallHighlightText,
+    )
+  ]);
+}
+

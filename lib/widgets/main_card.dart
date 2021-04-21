@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tinder_clone_flutter2/pages/profiles_page.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
 import 'package:tinder_clone_flutter2/values/textstyle.dart';
+import 'package:tinder_clone_flutter2/widgets/match_noti_card.dart';
 
 class MainCard extends StatefulWidget {
   @override
@@ -101,7 +102,8 @@ class _MainCardState extends State<MainCard> {
             child: InkWell(
           onTap: (){},
           child: Image.asset('assets/images/buttons-superlike_active.png'),
-        ))
+        )),
+        MatchCard(),
       ]
     );
   }
