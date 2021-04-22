@@ -13,7 +13,7 @@ class RootPage extends StatefulWidget {
 class _RootPageState extends State<RootPage> {
   List<Widget> _pages = [
     HomePage(),
-    MessagesPage(),
+    MessagePage(),
     NotificationsPage(),
     ProfilesPage()
   ];
@@ -25,6 +25,7 @@ class _RootPageState extends State<RootPage> {
     return Scaffold(
       backgroundColor: AppColors.black,
       appBar: AppBar(
+        brightness: Brightness.dark,
           title: Text("Find Match"),
           centerTitle: true,
           backgroundColor: AppColors.black,
@@ -79,6 +80,9 @@ class _RootPageState extends State<RootPage> {
                 color: AppColors.activeColor,
               )),
         ],
+        selectedLabelStyle: TextStyle(
+            color: AppColors.activeColor
+        ),
         currentIndex: _index,
       ),
     );

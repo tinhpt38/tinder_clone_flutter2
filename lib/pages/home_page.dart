@@ -79,6 +79,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     "Jack",
   ];
 
+
+  // final Message chat = chats[index];
+
   @override
   void dispose() {
     // _animationControllerLeft!.dispose();

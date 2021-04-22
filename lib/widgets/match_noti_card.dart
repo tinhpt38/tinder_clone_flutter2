@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tinder_clone_flutter2/pages/inbox.dart';
 import 'package:tinder_clone_flutter2/pages/message_page.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
 import 'package:tinder_clone_flutter2/values/textstyle.dart';
 
 class MatchCard extends StatefulWidget {
+
   @override
   _MatchCardState createState() => _MatchCardState();
 }
@@ -93,12 +95,15 @@ class _MatchCardState extends State<MatchCard> {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context)
-                    =>
-                        MessagesPage()
-                    ));
+                    //
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(builder: (context)
+                    // =>
+                    //     InboxPage(
+                    //       // user: chat.sender,
+                    //     )
+                    // ));
                   },
                   child: Container(
                     width: MediaQuery

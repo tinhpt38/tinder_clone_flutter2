@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tinder_clone_flutter2/pages/message_page.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
 import 'package:tinder_clone_flutter2/values/textstyle.dart';
 import 'package:tinder_clone_flutter2/widgets/friend_card.dart';
@@ -19,7 +20,12 @@ class _UserProfilePage extends State<UserProfilePage> {
             children: [
               Column(children: [
                 Container(
-                  color: AppColors.green,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/me.jpeg'),
+                      fit: BoxFit.cover
+                    ),
+                  ),
                   // height: MediaQuery.of(context).size.height / 1.3,
                   height: 600,
                 ),
@@ -140,11 +146,16 @@ class _UserProfilePage extends State<UserProfilePage> {
                         'assets/images/buttons-superlike_active.png'),
                   ),
                 ),
-                Container(
-                  width: 100,
-                  // color: Colors.amber,
-                  child: Image(
-                    image: AssetImage('assets/images/buttons-message.png'),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MessagePage()));
+                  },
+                  child: Container(
+                    width: 100,
+                    // color: Colors.amber,
+                    child: Image(
+                      image: AssetImage('assets/images/buttons-message.png'),
+                    ),
                   ),
                 ),
               ],

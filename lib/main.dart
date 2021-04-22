@@ -6,7 +6,7 @@ import 'package:tinder_clone_flutter2/values/app_color.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: AppColors.black, // navigation bar color
-    statusBarColor: AppColors.white, // status bar color
+    statusBarColor: AppColors.black, // status bar color
   ));
   runApp(MyApp());
 }
