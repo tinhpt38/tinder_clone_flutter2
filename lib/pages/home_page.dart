@@ -77,7 +77,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     "Thea",
     "John",
     "Jack",
-    "Cino"
   ];
 
   @override
