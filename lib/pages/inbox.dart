@@ -17,27 +17,21 @@ class _InboxPageState extends State<InboxPage> {
   _buildMessage(Message message, bool isMe) {
     final Container msg = Container(
       margin: isMe
-          ? EdgeInsets.symmetric(
-        vertical: 8
-        // left: 80.0,
+          ? EdgeInsets.only(
+        top: 8, bottom: 8,
+        left: 80.0, right: 20
       )
-          : EdgeInsets.symmetric(
-        vertical: 8
-        // right: 80.0
+          : EdgeInsets.only(
+          top: 8, bottom: 8,
+          left: 20.0, right: 80
       ),
       padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
       // width: MediaQuery.of(context).size.width * 0.75,
       decoration: BoxDecoration(
         color: isMe ? AppColors.activeColor : AppColors.white,
         borderRadius: isMe
-            ? BorderRadius.only(
-          topLeft: Radius.circular(15.0),
-          bottomLeft: Radius.circular(15.0),
-        )
-            : BorderRadius.only(
-          topRight: Radius.circular(15.0),
-          bottomRight: Radius.circular(15.0),
-        ),
+            ? BorderRadius.circular(20)
+            : BorderRadius.circular(20)
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
