@@ -13,6 +13,9 @@ class Message {
   });
 }
 
+List<User> friends = [sam, steven, olivia, john, greg];
+
+
 // YOU - current user
 final User currentUser = User(
   id: 0,
