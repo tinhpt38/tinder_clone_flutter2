@@ -72,7 +72,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 },
                 child: Image.asset(
                   "assets/images/buttons-like.png",
-                  scale: 0.5,
                 ),
               ),
             ),
@@ -115,6 +114,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             setState(() {
               _isMatch = index == randomIndex;
             });
+            if (index + 1 == users.length) {
+              setState(() {
+                List<String> temp = []..addAll(users);
+                users = temp;
+              });
+            }
           },
           cards: users
               .map((e) => MainCard(
