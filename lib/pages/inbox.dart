@@ -41,7 +41,7 @@ class _InboxPageState extends State<InboxPage> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8.0),
       height: 70.0,
-      color: AppColors.black,
+      color: AppColors.secondBlack,
       child: Row(
         children: <Widget>[
           IconButton(
@@ -81,10 +81,10 @@ class _InboxPageState extends State<InboxPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: AppColors.secondBlack,
       appBar: AppBar(
         brightness: Brightness.dark,
-        backgroundColor: AppColors.black,
+        backgroundColor: AppColors.secondBlack,
         title: Text(
           widget.user.name,
         ),

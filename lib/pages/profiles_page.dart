@@ -39,7 +39,7 @@ class _ProfilesPageState extends State<ProfilesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: AppColors.secondBlack,
       body: SafeArea(
         child: Column(
           children: [
@@ -55,9 +55,8 @@ class _ProfilesPageState extends State<ProfilesPage> {
                       borderRadius: BorderRadius.circular(200),
                       color: AppColors.red,
                       image: DecorationImage(
-                        image: AssetImage('assets/images/me.jpeg'),
-                        fit: BoxFit.cover
-                      ),
+                          image: AssetImage('assets/images/me.jpeg'),
+                          fit: BoxFit.cover),
                     ),
                   ),
                 ),

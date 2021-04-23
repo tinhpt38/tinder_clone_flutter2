@@ -12,9 +12,9 @@ class _MessagePageState extends State<MessagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: AppColors.secondBlack,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: AppColors.secondBlack,
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.menu),

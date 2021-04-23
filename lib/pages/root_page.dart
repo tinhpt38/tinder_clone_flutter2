@@ -23,17 +23,17 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: AppColors.secondBlack,
       body: _pages[_index],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           setState(() => _index = index);
         },
-        backgroundColor: AppColors.black,
+        backgroundColor: AppColors.primaryBlack,
         elevation: 0.0,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              backgroundColor: AppColors.black,
+              backgroundColor: AppColors.primaryBlack,
               icon: ImageIcon(AssetImage('assets/images/home_deactive.png')),
               label: 'Home',
               activeIcon: ImageIcon(
@@ -41,7 +41,7 @@ class _RootPageState extends State<RootPage> {
                 color: AppColors.activeColor,
               )),
           BottomNavigationBarItem(
-              backgroundColor: AppColors.black,
+              backgroundColor: AppColors.primaryBlack,
               icon: ImageIcon(AssetImage('assets/images/message_deactive.png')),
               label: 'Messages',
               activeIcon: ImageIcon(
@@ -49,7 +49,7 @@ class _RootPageState extends State<RootPage> {
                 color: AppColors.activeColor,
               )),
           BottomNavigationBarItem(
-              backgroundColor: AppColors.black,
+              backgroundColor: AppColors.primaryBlack,
               icon: ImageIcon(
                   AssetImage('assets/images/notifications_deactive.png')),
               label: 'Notifications',
@@ -58,7 +58,7 @@ class _RootPageState extends State<RootPage> {
                 color: AppColors.activeColor,
               )),
           BottomNavigationBarItem(
-              backgroundColor: AppColors.black,
+              backgroundColor: AppColors.primaryBlack,
               icon: ImageIcon(AssetImage('assets/images/profile_deactive.png')),
               label: 'Profiles',
               activeIcon: ImageIcon(

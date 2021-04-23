@@ -9,7 +9,7 @@ class RecentChats extends StatelessWidget {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.black,
+          color: AppColors.secondBlack,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.0),
             topRight: Radius.circular(30.0),
@@ -38,7 +38,7 @@ class RecentChats extends StatelessWidget {
                 margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                 decoration: BoxDecoration(
-                  color: AppColors.black, //note this
+                  color: AppColors.secondBlack, //note this
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

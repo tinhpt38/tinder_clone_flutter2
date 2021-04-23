@@ -92,12 +92,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       }
     });
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: AppColors.secondBlack,
       appBar: AppBar(
           brightness: Brightness.dark,
           title: Text("Find Match"),
           centerTitle: true,
-          backgroundColor: AppColors.black,
+          backgroundColor: AppColors.secondBlack,
           elevation: 0.0,
           leading: IconButton(
               onPressed: () {},
