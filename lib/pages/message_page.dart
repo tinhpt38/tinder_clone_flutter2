@@ -37,19 +37,6 @@ class _MessagePageState extends State<MessagePage> {
       ),
       body: Column(
         children: <Widget>[
-          Container(
-            height: 90,
-            width: MediaQuery.of(context).size.width,
-            color: AppColors.activeColor,
-            child: Center(
-              child: Text(
-                'user field <undone>',
-                style: TextStyle(color: AppColors.black),
-              ),
-            ),
-          ),
-      body: Column(
-        children: <Widget>[
           FriendBar(),
           RecentChats(),
         ],
