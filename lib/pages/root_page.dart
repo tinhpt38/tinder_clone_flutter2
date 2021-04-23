@@ -24,20 +24,6 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.black,
-      appBar: AppBar(
-        brightness: Brightness.dark,
-          title: Text("Find Match"),
-          centerTitle: true,
-          backgroundColor: AppColors.black,
-          elevation: 0.0,
-          leading: IconButton(
-              onPressed: () {},
-              icon: ImageIcon(AssetImage('assets/images/dashboard.png'))),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: ImageIcon(AssetImage('assets/images/menu.png'))),
-          ]),
       body: _pages[_index],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
@@ -80,9 +66,7 @@ class _RootPageState extends State<RootPage> {
                 color: AppColors.activeColor,
               )),
         ],
-        selectedLabelStyle: TextStyle(
-            color: AppColors.activeColor
-        ),
+        selectedLabelStyle: TextStyle(color: AppColors.activeColor),
         currentIndex: _index,
       ),
     );

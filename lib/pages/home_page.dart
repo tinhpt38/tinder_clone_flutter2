@@ -1,5 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:tcard/tcard.dart';
+import 'package:tinder_clone_flutter2/models/user_model.dart';
+import 'package:tinder_clone_flutter2/pages/inbox.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
 import 'package:tinder_clone_flutter2/widgets/main_card.dart';
 
@@ -11,60 +15,6 @@ class HomePage extends StatefulWidget {
 enum direction { right, left }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  AnimationController? _animationControllerRight;
-  AnimationController? _animationControllerLeft;
-  Animation<double>? slideAnimR, slideAnimL, rotateAnimR, rotateAnimaL;
-  var dir;
-  double? width;
-  double? startDargeDetail;
-
-  // @override
-  // void didChangeDependencies() {
-  //   width = MediaQuery.of(context).size.width;
-  //   _animationControllerRight =
-  //       AnimationController(vsync: this, duration: Duration(milliseconds: 400))
-  //         ..addStatusListener((status) {
-  //           if (status == AnimationStatus.completed) {
-  //             setState(() {
-  //               users.removeLast();
-  //             });
-  //           }
-  //         });
-  //   _animationControllerLeft =
-  //       AnimationController(vsync: this, duration: Duration(milliseconds: 400))
-  //         ..addStatusListener((status) {
-  //           if (status == AnimationStatus.completed) {
-  //             setState(() {
-  //               users.removeLast();
-  //             });
-  //           }
-  //         });
-
-  //   final curvedAnimationR = CurvedAnimation(
-  //       parent: _animationControllerRight!, curve: Curves.easeOut);
-  //   final curvedAnimationL = CurvedAnimation(
-  //       parent: _animationControllerLeft!, curve: Curves.easeOut);
-
-  //   slideAnimR = Tween<double>(begin: 0, end: width).animate(curvedAnimationR)
-  //     ..addListener(() {
-  //       setState(() {});
-  //     });
-  //   rotateAnimR = Tween<double>(begin: 0, end: -0.3).animate(curvedAnimationR)
-  //     ..addListener(() {
-  //       setState(() {});
-  //     });
-
-  //   slideAnimL = Tween<double>(begin: 0, end: -width!).animate(curvedAnimationL)
-  //     ..addListener(() {
-  //       setState(() {});
-  //     });
-  //   rotateAnimaL = Tween<double>(begin: 0, end: 0.3).animate(curvedAnimationL)
-  //     ..addListener(() {
-  //       setState(() {});
-  //     });
-  //   super.didChangeDependencies();
-  // }
-
   List<String> users = [
     "Tomato",
     "Oliver",
@@ -79,76 +29,93 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     "Jack",
   ];
 
-
-  // final Message chat = chats[index];
+  bool _isMatch = false;
 
   @override
-  void dispose() {
-    // _animationControllerLeft!.dispose();
-    // _animationControllerRight!.dispose();
-    super.dispose();
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      // randomIndex = randomMatch;
+      randomIndex = 2;
+    });
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     body: Container(
-  //       color: AppColors.black,
-  //       child: Padding(
-  //         padding: EdgeInsets.all(15),
-  //         // child: Transform.rotate(
-  //         // angle: dir == direction.right
-  //         //     ? rotateAnimR?.value == null
-  //         //         ? 0
-  //         //         : rotateAnimR!.value
-  //         //     : rotateAnimaL?.value == null
-  //         //         ? 0
-  //         //         : rotateAnimaL!.value,
-  //         child: Center(
-  //           child: GestureDetector(
-  //             onHorizontalDragStart: (dragDetail) {
-  //               startDargeDetail = dragDetail.localPosition.dx;
-  //             },
-  //             onHorizontalDragUpdate: (dragDetail) {
-  //               if (dragDetail.localPosition.dx - startDargeDetail! > 0) {
-  //                 // dir = direction.right;
-  //                 // _animationControllerRight?.forward();
-  //                 print("Right");
-  //               } else {
-  //                 // dir = direction.left;
-  //                 // _animationControllerLeft?.forward();
-  //                 print("Left");
-  //               }
-  //             },
-  //             onHorizontalDragEnd: (dragDetail) {},
-  //             child: InkWell(
-  //               onTap: () {},
-  //               child: Stack(
-  //                 children: users
-  //                     .asMap()
-  //                     .map((key, value) =>
-  //                         MapEntry(key, MainCard(username: value)))
-  //                     .values
-  //                     .toList(),
-  //               ),
-  //             ),
-  //           ),
-  //         ),
-  //       ),
-  //     ),
-  //     // ),
-  //   );
-  // }
-  //
-  //
+  int randomIndex = 0;
+  int get randomMatch => Random().nextInt(users.length);
+
+  showMatchDialog() async {
+    await showDialog(
+        barrierDismissible: true,
+        barrierColor: Colors.transparent,
+        context: context,
+        builder: (_) {
+          return Dialog(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            child: Container(
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => InboxPage(
+                                  user: User(
+                                      id: 0,
+                                      name: "julia",
+                                      imageUrl: "assets/images/me.jpeg"))))
+                      .then((value) => Navigator.pop(context));
+
+                  setState(() {
+                    _isMatch = false;
+                    // randomIndex = randomMatch;
+                  });
+                },
+                child: Image.asset(
+                  "assets/images/buttons-like.png",
+                  scale: 0.5,
+                ),
+              ),
+            ),
+          );
+        }).then((value) => {
+          setState(() {
+            _isMatch = false;
+            randomIndex = randomMatch;
+          })
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration.zero, () {
+      if (_isMatch) {
+        showMatchDialog();
+      }
+    });
     return Scaffold(
       backgroundColor: AppColors.black,
+      appBar: AppBar(
+          brightness: Brightness.dark,
+          title: Text("Find Match"),
+          centerTitle: true,
+          backgroundColor: AppColors.black,
+          elevation: 0.0,
+          leading: IconButton(
+              onPressed: () {},
+              icon: ImageIcon(AssetImage('assets/images/dashboard.png'))),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: ImageIcon(AssetImage('assets/images/menu.png'))),
+          ]),
       body: Container(
         child: TCard(
           size: MediaQuery.of(context).size,
+          onForward: (index, _) {
+            setState(() {
+              _isMatch = index == randomIndex;
+            });
+          },
           cards: users
               .map((e) => MainCard(
                     username: e,

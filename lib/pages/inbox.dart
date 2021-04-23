@@ -17,38 +17,24 @@ class _InboxPageState extends State<InboxPage> {
   _buildMessage(Message message, bool isMe) {
     final Container msg = Container(
       margin: isMe
-          ? EdgeInsets.only(
-        top: 8, bottom: 8,
-        left: 80.0, right: 20
-      )
-          : EdgeInsets.only(
-          top: 8, bottom: 8,
-          left: 20.0, right: 80
-      ),
+          ? EdgeInsets.only(top: 8, bottom: 8, left: 80.0, right: 20)
+          : EdgeInsets.only(top: 8, bottom: 8, left: 20.0, right: 80),
       padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
       // width: MediaQuery.of(context).size.width * 0.75,
       decoration: BoxDecoration(
-        color: isMe ? AppColors.activeColor : AppColors.white,
-        borderRadius: isMe
-            ? BorderRadius.circular(20)
-            : BorderRadius.circular(20)
-      ),
+          color: isMe ? AppColors.activeColor : AppColors.white,
+          borderRadius:
+              isMe ? BorderRadius.circular(20) : BorderRadius.circular(20)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            message.time,
-            style: TxtStyle.smallBlackText
-          ),
+          Text(message.time, style: TxtStyle.smallBlackText),
           SizedBox(height: 8.0),
-          Text(
-            message.text,
-            style: TxtStyle.smallBlackText
-          ),
+          Text(message.text, style: TxtStyle.smallBlackText),
         ],
       ),
     );
-      return msg;
+    return msg;
   }
 
   _buildMessageComposer() {
@@ -67,11 +53,10 @@ class _InboxPageState extends State<InboxPage> {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                color: AppColors.grey,
-                borderRadius: BorderRadius.circular(20)
-              ),
+                  color: AppColors.grey,
+                  borderRadius: BorderRadius.circular(20)),
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: TextField(
                   textCapitalization: TextCapitalization.sentences,
                   onChanged: (value) {},
@@ -102,10 +87,6 @@ class _InboxPageState extends State<InboxPage> {
         backgroundColor: AppColors.black,
         title: Text(
           widget.user.name,
-          style: TextStyle(
-            fontSize: 28.0,
-            fontWeight: FontWeight.bold,
-          ),
         ),
         elevation: 0.0,
         actions: <Widget>[

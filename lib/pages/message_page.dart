@@ -12,30 +12,28 @@ class _MessagePageState extends State<MessagePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.black,
-      // appBar: AppBar(
-      //   leading: IconButton(
-      //     icon: Icon(Icons.menu),
-      //     iconSize: 30.0,
-      //     color: Colors.white,
-      //     onPressed: () {},
-      //   ),
-      //   title: Text(
-      //     'Chats',
-      //     style: TextStyle(
-      //       fontSize: 28.0,
-      //       fontWeight: FontWeight.bold,
-      //     ),
-      //   ),
-      //   elevation: 0.0,
-      //   actions: <Widget>[
-      //     IconButton(
-      //       icon: Icon(Icons.search),
-      //       iconSize: 30.0,
-      //       color: Colors.white,
-      //       onPressed: () {},
-      //     ),
-      //   ],
-      // ),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          iconSize: 30.0,
+          color: Colors.white,
+          onPressed: () {},
+        ),
+        title: Text(
+          'Mesages',
+        ),
+        elevation: 0.0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            iconSize: 30.0,
+            color: Colors.white,
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: Column(
         children: <Widget>[
           Container(
@@ -45,9 +43,7 @@ class _MessagePageState extends State<MessagePage> {
             child: Center(
               child: Text(
                 'user field <undone>',
-                style: TextStyle(
-                  color: AppColors.black
-                ),
+                style: TextStyle(color: AppColors.black),
               ),
             ),
           ),
