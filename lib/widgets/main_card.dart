@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tinder_clone_flutter2/pages/user_profile.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
 import 'package:tinder_clone_flutter2/values/textstyle.dart';
-import 'package:tinder_clone_flutter2/widgets/match_noti_card.dart';
 
 class MainCard extends StatefulWidget {
   final String? username;
@@ -54,14 +53,24 @@ class _MainCardState extends State<MainCard> {
                           Expanded(
                             child: Row(
                               children: [
-                                Expanded(
-                                    child: Text(
+                                Text(
                                   widget.username!,
                                   style: TxtStyle.nameStyle,
-                                )),
-                                Expanded(
-                                    child:
-                                        Text('20', style: TxtStyle.nameStyle)),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 24),
+                                  child: Container(
+                                    width: 5,
+                                    height: 5,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: AppColors.grey),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 24),
+                                  child: Text('20', style: TxtStyle.nameStyle),
+                                ),
                               ],
                             ),
                           ),
@@ -70,11 +79,17 @@ class _MainCardState extends State<MainCard> {
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                      color: Colors.red,
+                                      gradient: LinearGradient(
+                                          begin: Alignment.centerLeft,
+                                          end: Alignment.centerRight,
+                                          colors: [
+                                            AppColors.red,
+                                            AppColors.organ,
+                                          ]),
                                       borderRadius: BorderRadius.circular(30)),
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
-                                        vertical: 5, horizontal: 8),
+                                        vertical: 2, horizontal: 8),
                                     child: Text(
                                       'Versatile',
                                       style: TxtStyle.smallHighlightText,
@@ -105,8 +120,8 @@ class _MainCardState extends State<MainCard> {
             decoration: BoxDecoration(
                 color: Color(0x4B000000),
                 borderRadius: BorderRadius.circular(50)),
-            height: 50,
-            width: 50,
+            height: 42,
+            width: 42,
             child: InkWell(
               onTap: () {},
               child: Image.asset('assets/images/Swipe_Rollback.png'),
@@ -116,7 +131,7 @@ class _MainCardState extends State<MainCard> {
           // left: MediaQuery.of(context).size.height / 3.2,
           // top: MediaQuery.of(context).size.height / 1.72,
           right: 24,
-          bottom: 90,
+          bottom: MediaQuery.of(context).size.height * 0.1,
           child: InkWell(
             onTap: () {},
             child: Image.asset('assets/images/buttons-superlike_active.png'),

@@ -3,11 +3,11 @@ import 'package:tinder_clone_flutter2/values/app_color.dart';
 
 class TxtStyle {
   static TextStyle nameStyle = TextStyle(
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: FontWeight.bold,
   );
   static TextStyle smallHighlightText = TextStyle(
-      fontSize: 16,
+      fontSize: 12,
       color: AppColors.white,
       fontWeight: FontWeight.w200,
       decoration: TextDecoration.none);
@@ -28,17 +28,14 @@ class TxtStyle {
       fontSize: 22,
       color: AppColors.white,
       fontWeight: FontWeight.w300,
-      decoration: TextDecoration.none
-  );
+      decoration: TextDecoration.none);
   static TextStyle bigBlackText = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.w300,
-    decoration: TextDecoration.none
-  );
+      fontSize: 30,
+      fontWeight: FontWeight.w300,
+      decoration: TextDecoration.none);
   static TextStyle bigWhiteText = TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w400,
       color: AppColors.white,
-      decoration: TextDecoration.none
-  );
+      decoration: TextDecoration.none);
 }

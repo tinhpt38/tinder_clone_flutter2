@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static final Color black = Color(0xff000000); //real black
-  // static final Color black = Color(0xff4A4A4A);
+  // static final Color black = Color(0xff000000); //real black
+  static final Color black = Color(0xff4A4A4A);
   static final Color blue = Color(0xff4A90E2);
   static final Color grey = Color(0xffC1C0C9);
   static final Color red = Color(0xffE21F70);
@@ -13,4 +13,5 @@ class AppColors {
   static final Color violet = Color(0xffD980FA);
   static final Color pink = Color(0xffFDA7DF);
   static final Color green = Color(0xffA3CB38);
+  static final Color organ = Color(0xffFF4D2C);
 }

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:tcard/tcard.dart';
+import 'package:tinder_clone_flutter2/custom_lib/tcard/cards.dart';
 import 'package:tinder_clone_flutter2/models/user_model.dart';
 import 'package:tinder_clone_flutter2/pages/inbox.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
