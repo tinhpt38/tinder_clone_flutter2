@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_clone_flutter2/values/app_color.dart';
+import 'package:tinder_clone_flutter2/widgets/friend_bar.dart';
 import 'package:tinder_clone_flutter2/widgets/recent_chat.dart';
 
 class MessagePage extends StatefulWidget {
@@ -47,6 +48,9 @@ class _MessagePageState extends State<MessagePage> {
               ),
             ),
           ),
+      body: Column(
+        children: <Widget>[
+          FriendBar(),
           RecentChats(),
         ],
       ),
